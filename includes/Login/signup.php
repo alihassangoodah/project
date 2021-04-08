@@ -18,7 +18,7 @@
    // $header='From:<3amleh@website.com >'."\r\n"
     //        'Content-type: text/html; charset=utf-8';
     
-    $message_verfication='
+   /* $message_verfication='
                                  <html>
                                  <head>
                                  </head>
@@ -31,6 +31,7 @@
                                  </body>
                                  </html>
                         ';
+                        */
     
    $stmt=$con->prepare("SELECT email FROM users WHERE email = ?");
    $stmt->execute([$email]);
@@ -66,7 +67,7 @@
 
         $stmt->execute([$fname,$lname,$email,$hashed]);
        
-        mail($email,'كود التحقق',$message_verfication);
+       // mail($email,'كود التحقق',$message_verfication);
        
    } else { foreach($Errors as $error){?>
 
